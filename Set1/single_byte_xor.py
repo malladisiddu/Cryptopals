@@ -27,4 +27,5 @@ for i in range(255):
 	flag.append(xor(c,i))
 	if "Cooking" in flag[i]:
 		print flag[i]
+		print i
 """
