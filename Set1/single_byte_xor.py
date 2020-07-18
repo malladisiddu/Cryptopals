@@ -11,6 +11,18 @@ def single_byte_xor(a):
 			break
 	return None
 
-a = '1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736'.decode('hex')
+c = '1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736'.decode('hex')
 
-single_byte_xor(a)
+single_byte_xor(c)
+
+"""
+Refined or Simpler Version using inbuilt tools
+
+from pwn import xor
+c = '1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736'.decode('hex')
+flag = []
+for i in range(255):
+	flag.append(xor(c,i))
+	if "Cooking" in flag[i]:
+		print flag[i]
+"""
